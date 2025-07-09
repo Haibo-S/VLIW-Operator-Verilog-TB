@@ -5,4 +5,7 @@ test_base.o: ../../tb/adder8/test_base.cpp Vtop.h \
  /opt/oss-cad-suite/share/verilator/include/verilated_types.h \
  /opt/oss-cad-suite/share/verilator/include/verilated_funcs.h \
  ../../tb/adder8/test_base.h \
+ /opt/oss-cad-suite/share/verilator/include/verilated_vcd_c.h \
+ /opt/oss-cad-suite/share/verilator/include/verilated.h \
+ /opt/oss-cad-suite/share/verilator/include/verilated_trace.h \
  /opt/oss-cad-suite/share/verilator/include/vltstd/svdpi.h
