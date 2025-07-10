@@ -1,0 +1,14 @@
+v 4
+file . "fpadd32.vhdl" "42257198dd6bf065ff26a3c31104306c52f3ce80" "20250621211009.150":
+  entity rightshiftersticky24_by_max_26_freq500_uid4 at 16( 713) + 0 on 11;
+  architecture arch of rightshiftersticky24_by_max_26_freq500_uid4 at 32( 1150) + 0 on 12;
+  entity intadder_27_freq500_uid6 at 108( 4496) + 0 on 13;
+  architecture arch of intadder_27_freq500_uid6 at 124( 4911) + 0 on 14;
+  entity normalizer_z_28_28_28_freq500_uid8 at 171( 6581) + 0 on 15;
+  architecture arch of normalizer_z_28_28_28_freq500_uid8 at 186( 6979) + 0 on 16;
+  entity intadder_34_freq500_uid11 at 263( 10285) + 0 on 17;
+  architecture arch of intadder_34_freq500_uid11 at 279( 10701) + 0 on 18;
+  entity top_module at 330( 12535) + 0 on 19;
+  architecture arch of top_module at 345( 12917) + 0 on 20;
+  entity testbench_top_module_freq500_uid13 at 615( 24875) + 0 on 21;
+  architecture behavorial of testbench_top_module_freq500_uid13 at 625( 25050) + 0 on 22;

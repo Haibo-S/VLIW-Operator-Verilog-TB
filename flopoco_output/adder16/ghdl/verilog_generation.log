@@ -1,0 +1,8 @@
+ghdl -a -fsynopsys -fexplicit adder16.vhdl
+adder16.vhdl:120:16:warning: declaration of "r" hides signal "R" [-Whide]
+      variable r : integer;
+               ^
+adder16.vhdl:130:109:warning: declaration of "R" hides signal "R" [-Whide]
+   function testLine(testCounter:integer; expectedOutputS: string(1 to 10000); expectedOutputSize: integer; R:  std_logic_vector(16 downto 0)) return boolean is
+                                                                                                            ^
+ghdl synth --out=verilog -fsynopsys -fexplicit top_module > adder16_ghdl.v

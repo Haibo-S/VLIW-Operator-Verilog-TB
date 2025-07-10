@@ -1,0 +1,48 @@
+#! /opt/oss-cad-suite/bin/vvp
+:ivl_version "13.0 (devel)" "(s20250103-31-g7e238e7ca)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/oss-cad-suite/lib/ivl/system.vpi";
+:vpi_module "/opt/oss-cad-suite/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/oss-cad-suite/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/oss-cad-suite/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/oss-cad-suite/lib/ivl/va_math.vpi";
+S_0x55558b69c010 .scope module, "top_module" "top_module" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 32 "X";
+    .port_info 2 /INPUT 32 "Y";
+    .port_info 3 /OUTPUT 64 "R";
+L_0x55558b6e8950 .functor BUFZ 64, L_0x55558b6e89e0, C4<0000000000000000000000000000000000000000000000000000000000000000>, C4<0000000000000000000000000000000000000000000000000000000000000000>, C4<0000000000000000000000000000000000000000000000000000000000000000>;
+L_0x55558b6e89e0 .functor BUFZ 64, L_0x55558b6e90c0, C4<0000000000000000000000000000000000000000000000000000000000000000>, C4<0000000000000000000000000000000000000000000000000000000000000000>, C4<0000000000000000000000000000000000000000000000000000000000000000>;
+v0x55558b6c46b0_0 .net "R", 63 0, L_0x55558b6e8950;  1 drivers
+o0x7c8efdd20048 .functor BUFZ 32, c4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v0x55558b6e7db0_0 .net "X", 31 0, o0x7c8efdd20048;  0 drivers
+o0x7c8efdd20078 .functor BUFZ 32, c4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v0x55558b6e7e90_0 .net "Y", 31 0, o0x7c8efdd20078;  0 drivers
+v0x55558b6e7f50_0 .net *"_ivl_11", 0 0, L_0x55558b6e8d50;  1 drivers
+v0x55558b6e8030_0 .net *"_ivl_13", 31 0, L_0x55558b6e8e20;  1 drivers
+v0x55558b6e8110_0 .net *"_ivl_5", 0 0, L_0x55558b6e8a50;  1 drivers
+v0x55558b6e81f0_0 .net *"_ivl_7", 31 0, L_0x55558b6e8af0;  1 drivers
+o0x7c8efdd20168 .functor BUFZ 1, c4<z>; HiZ drive
+v0x55558b6e82d0_0 .net "clk", 0 0, o0x7c8efdd20168;  0 drivers
+v0x55558b6e8390_0 .net "n1", 63 0, L_0x55558b6e8c10;  1 drivers
+v0x55558b6e8470_0 .net "n2", 63 0, L_0x55558b6e8f40;  1 drivers
+v0x55558b6e8550_0 .net "n3", 63 0, L_0x55558b6e90c0;  1 drivers
+v0x55558b6e8630_0 .net "rr", 63 0, L_0x55558b6e89e0;  1 drivers
+o0x7c8efdd20258 .functor BUFZ 32, c4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v0x55558b6e8710_0 .net "xx", 31 0, o0x7c8efdd20258;  0 drivers
+o0x7c8efdd20288 .functor BUFZ 32, c4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v0x55558b6e87f0_0 .net "yy", 31 0, o0x7c8efdd20288;  0 drivers
+L_0x55558b6e8a50 .part o0x7c8efdd20258, 31, 1;
+L_0x55558b6e8af0 .repeat 32, 32, L_0x55558b6e8a50;
+L_0x55558b6e8c10 .concat [ 32 32 0 0], o0x7c8efdd20258, L_0x55558b6e8af0;
+L_0x55558b6e8d50 .part o0x7c8efdd20288, 31, 1;
+L_0x55558b6e8e20 .repeat 32, 32, L_0x55558b6e8d50;
+L_0x55558b6e8f40 .concat [ 32 32 0 0], o0x7c8efdd20288, L_0x55558b6e8e20;
+L_0x55558b6e90c0 .arith/mult 64, L_0x55558b6e8c10, L_0x55558b6e8f40;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "mult32_ghdl.v";

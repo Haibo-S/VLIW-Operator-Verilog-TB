@@ -1,0 +1,9 @@
+mult4/mult4.vhdl:129:16:warning: declaration of "r" hides signal "R" [-Whide]
+      variable r : integer;
+               ^
+mult4/mult4.vhdl:139:109:warning: declaration of "R" hides signal "R" [-Whide]
+   function testLine(testCounter:integer; expectedOutputS: string(1 to 10000); expectedOutputSize: integer; R:  std_logic_vector(7 downto 0)) return boolean is
+                                                                                                            ^
+mult4/mult4.vhdl:249:7:@1000042ns:(report note): 0 error(s) encoutered.
+mult4/mult4.vhdl:250:7:@1000042ns:(report note): End of simulation after 100003 tests
+ghdl:info: simulation stopped by --stop-time @1000042ns

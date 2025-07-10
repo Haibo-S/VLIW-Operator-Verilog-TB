@@ -1,0 +1,26 @@
+[Running] flopoco IntMultiplier wX=4 wY=4 signedIO=true name=top_module frequency=500 TestBench n=100000 outputFile=mult4/mult4.vhdl
+[TESTBENCH] inputFile=test.input[1;37mInfo: [0m[0;34mTestBench.cpp[0m: Test bench for top_module
+[1;37mInfo: [0m[0;34mTestBench.cpp[0m: 100000 test cases have been generated
+
+*** Final report ***
+Output file: mult4/mult4.vhdl
+Pipeline constructed using approximate timings for target DummyFPGA @ 500 MHz
+Entity top_module
+   R: (c0, 0.000000ns)
+Entity TestBench_top_module_Freq500_uid5
+
+To run the simulation using ModelSim, type the following in 'vsim -c':
+   vdel -all -lib work
+   vlib work
+   vcom mult4/mult4.vhdl
+   vsim TestBench_top_module_Freq500_uid5
+   add wave -r *
+   run 1000042ns
+To run the simulation using gHDL, type the following in a shell prompt:
+ghdl -a --ieee=standard --ieee=synopsys -fexplicit mult4/mult4.vhdl
+ghdl -e --ieee=standard --ieee=synopsys -fexplicit TestBench_top_module_Freq500_uid5
+ghdl -r --ieee=standard --ieee=synopsys -fexplicit TestBench_top_module_Freq500_uid5 --vcd=TestBench_top_module_Freq500_uid5.vcd --stop-time=1000042ns
+gtkwave TestBench_top_module_Freq500_uid5.vcd
+To run the simulation using nvc, type the following in a shell prompt:
+nvc -M 128m --stderr=error -a mult4/mult4.vhdl --relaxed --error-limit=0 -e TestBench_top_module_Freq500_uid5  -r --wave=TestBench_top_module_Freq500_uid5.fst --stop-time=1000042ns
+gtkwave TestBench_top_module_Freq500_uid5.fst

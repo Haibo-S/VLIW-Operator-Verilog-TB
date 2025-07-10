@@ -1,0 +1,31 @@
+[Running] flopoco FPMult wE=4 wF=3 name=top_module frequency=500 TestBench n=100000 outputFile=fpmult8/fpmult8.vhdl
+[TESTBENCH] inputFile=test.input[1;37mInfo: [0m[0;34mTestBench.cpp[0m: Test bench for top_module
+[1;33mWarning: [0m[0;34mOperator.cpp[0m:[1;37m2063[0m ([1;37mbuildStandardTestCases()[0m): No standard test cases implemented for this operator
+[1;37mInfo: [0m[0;34mTestBench.cpp[0m: 100000 test cases have been generated
+
+*** Final report ***
+Output file: fpmult8/fpmult8.vhdl
+Pipeline constructed using approximate timings for target DummyFPGA @ 500 MHz
+|---Entity IntMultiplier_4x4_8_Freq500_uid5
+|      R: (c0, 0.000000ns)
+|---Entity IntAdder_9_Freq500_uid9
+|      R: (c1, 1.380000ns)
+Entity top_module
+   R: (c1, 1.380000ns)
+Entity TestBench_top_module_Freq500_uid11
+
+To run the simulation using ModelSim, type the following in 'vsim -c':
+   vdel -all -lib work
+   vlib work
+   vcom fpmult8/fpmult8.vhdl
+   vsim TestBench_top_module_Freq500_uid11
+   add wave -r *
+   run 1000022ns
+To run the simulation using gHDL, type the following in a shell prompt:
+ghdl -a --ieee=standard --ieee=synopsys -fexplicit fpmult8/fpmult8.vhdl
+ghdl -e --ieee=standard --ieee=synopsys -fexplicit TestBench_top_module_Freq500_uid11
+ghdl -r --ieee=standard --ieee=synopsys -fexplicit TestBench_top_module_Freq500_uid11 --vcd=TestBench_top_module_Freq500_uid11.vcd --stop-time=1000022ns
+gtkwave TestBench_top_module_Freq500_uid11.vcd
+To run the simulation using nvc, type the following in a shell prompt:
+nvc -M 128m --stderr=error -a fpmult8/fpmult8.vhdl --relaxed --error-limit=0 -e TestBench_top_module_Freq500_uid11  -r --wave=TestBench_top_module_Freq500_uid11.fst --stop-time=1000022ns
+gtkwave TestBench_top_module_Freq500_uid11.fst

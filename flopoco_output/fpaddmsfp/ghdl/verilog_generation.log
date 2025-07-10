@@ -1,0 +1,8 @@
+ghdl -a -fsynopsys -fexplicit fpaddmsfp.vhdl
+fpaddmsfp.vhdl:674:16:warning: declaration of "r" hides signal "R" [-Whide]
+      variable r : integer;
+               ^
+fpaddmsfp.vhdl:706:109:warning: declaration of "R" hides signal "R" [-Whide]
+   function testLine(testCounter:integer; expectedOutputS: string(1 to 10000); expectedOutputSize: integer; R:  std_logic_vector(6+9+2 downto 0)) return boolean is
+                                                                                                            ^
+ghdl synth --out=verilog -fsynopsys -fexplicit top_module > fpaddmsfp_ghdl.v

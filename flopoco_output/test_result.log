@@ -1,0 +1,8 @@
+
+fpadd8 failed
+fplogbf16 failed
+fppow16 failed
+fppow32 failed
+fppowbf16 failed
+fppowtf32 failed
+Total test time: 540 seconds

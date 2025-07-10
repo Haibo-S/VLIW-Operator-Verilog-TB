@@ -1,0 +1,135 @@
+[Running] flopoco FPPow wE=8 wF=10 name=top_module frequency=500 TestBench n=100000 outputFile=fppowtf32/fppowtf32.vhdl
+wE=8 wF=10 d=0 k=10 g=3
+[TESTBENCH] inputFile=test.input[1;37mInfo: [0m[0;34mTestBench.cpp[0m: Test bench for top_module
+[1;37mInfo: [0m[0;34mTestBench.cpp[0m: 100000 test cases have been generated
+
+*** Final report ***
+Output file: fppowtf32/fppowtf32.vhdl
+Pipeline constructed using approximate timings for target DummyFPGA @ 500 MHz
+Entity InvA0Table_Freq500_uid15
+   Y: (c0, 0.550000ns)
+Entity LogTable0_Freq500_uid27
+   Y: (c0, 0.550000ns)
+Entity LogTable1_Freq500_uid30
+   Y: (c0, 0.600000ns)
+Entity FixRealKCM_Freq500_uid39_T0_Freq500_uid42
+   Y: (c0, 0.550000ns)
+Entity FixRealKCM_Freq500_uid39_T1_Freq500_uid45
+   Y: (c0, 0.550000ns)
+Entity FixRealKCM_Freq500_uid77_T0_Freq500_uid80
+   Y: (c0, 0.550000ns)
+Entity FixRealKCM_Freq500_uid77_T1_Freq500_uid83
+   Y: (c0, 0.550000ns)
+Entity FixRealKCM_Freq500_uid89_T0_Freq500_uid92
+   Y: (c0, 0.550000ns)
+Entity FixRealKCM_Freq500_uid89_T1_Freq500_uid95
+   Y: (c0, 0.550000ns)
+Entity FixFunctionByTable_Freq500_uid104
+   Y: (c0, 0.550000ns)
+Entity FixFunctionByTable_Freq500_uid107
+   Y: (c0, 0.550000ns)
+|---Entity IntAdder_19_Freq500_uid5
+|      R: (c0, 1.180000ns)
+|---Entity LZC_10_Freq500_uid7
+|      O: (c1, 0.980000ns)
+|   |---Entity LZOC_20_Freq500_uid11
+|   |      O: (c3, 0.410000ns)
+|   |---Entity LeftShifter11_by_max_11_Freq500_uid13
+|   |      R: (c4, 1.375385ns)
+|   |---Entity InvA0Table_Freq500_uid15
+|   |      Y: (c0, 0.550000ns)
+|   |---Entity IntAdder_24_Freq500_uid19
+|   |      R: (c2, 0.590000ns)
+|   |---Entity IntAdder_24_Freq500_uid22
+|   |      R: (c3, 0.620000ns)
+|   |---Entity IntAdder_24_Freq500_uid25
+|   |      R: (c6, 0.105385ns)
+|   |---Entity LogTable0_Freq500_uid27
+|   |      Y: (c0, 0.550000ns)
+|   |---Entity LogTable1_Freq500_uid30
+|   |      Y: (c0, 0.600000ns)
+|   |---Entity IntAdder_35_Freq500_uid34
+|   |      R: (c2, 0.750000ns)
+|   |---Entity IntAdder_35_Freq500_uid37
+|   |      R: (c6, 1.445385ns)
+|   |   |---Entity FixRealKCM_Freq500_uid39_T0_Freq500_uid42
+|   |   |      Y: (c0, 0.550000ns)
+|   |   |---Entity FixRealKCM_Freq500_uid39_T1_Freq500_uid45
+|   |   |      Y: (c0, 0.550000ns)
+|   |   |---Entity IntAdder_32_Freq500_uid49
+|   |   |      R: (c1, 1.680000ns)
+|   |---Entity FixRealKCM_Freq500_uid39
+|   |      R: (c1, 1.680000ns)
+|   |---Entity IntAdder_43_Freq500_uid51
+|   |      R: (c8, 0.275385ns)
+|   |---Entity Normalizer_Z_43_35_18_Freq500_uid53
+|   |      Count: (c10, 1.715385ns)   R: (c11, 0.465385ns)
+|   |---Entity RightShifter15_by_max_14_Freq500_uid55
+|   |      R: (c6, 0.163846ns)
+|   |---Entity IntAdder_26_Freq500_uid57
+|   |      R: (c6, 1.413846ns)
+|   |---Entity IntAdder_28_Freq500_uid60
+|   |      R: (c11, 1.735385ns)
+|---Entity FPLogIterative_8_20_0_500_Freq500_uid9
+|      R: (c11, 1.735385ns)
+|   |---Entity IntMultiplier_21x11_24_Freq500_uid65
+|   |      R: (c11, 1.735385ns)
+|   |---Entity IntAdder_31_Freq500_uid69
+|   |      R: (c13, 1.615385ns)
+|---Entity FPMult_8_20_uid62_Freq500_uid63
+|      R: (c13, 1.615385ns)
+|   |---Entity LeftShifter22_by_max_19_Freq500_uid73
+|   |      R: (c15, 1.159231ns)
+|   |   |   |---Entity FixRealKCM_Freq500_uid77_T0_Freq500_uid80
+|   |   |   |      Y: (c0, 0.550000ns)
+|   |   |   |---Entity FixRealKCM_Freq500_uid77_T1_Freq500_uid83
+|   |   |   |      Y: (c0, 0.550000ns)
+|   |   |   |---Entity IntAdder_12_Freq500_uid87
+|   |   |   |      R: (c16, 1.019231ns)
+|   |   |---Entity FixRealKCM_Freq500_uid77
+|   |   |      R: (c16, 1.019231ns)
+|   |   |   |---Entity FixRealKCM_Freq500_uid89_T0_Freq500_uid92
+|   |   |   |      Y: (c0, 0.550000ns)
+|   |   |   |---Entity FixRealKCM_Freq500_uid89_T1_Freq500_uid95
+|   |   |   |      Y: (c0, 0.550000ns)
+|   |   |   |---Entity IntAdder_21_Freq500_uid99
+|   |   |   |      R: (c17, 0.969231ns)
+|   |   |---Entity FixRealKCM_Freq500_uid89
+|   |   |      R: (c17, 0.969231ns)
+|   |   |---Entity IntAdder_13_Freq500_uid102
+|   |   |      R: (c18, 0.289231ns)
+|   |   |---Entity FixFunctionByTable_Freq500_uid104
+|   |   |      Y: (c0, 0.550000ns)
+|   |   |---Entity FixFunctionByTable_Freq500_uid107
+|   |   |      Y: (c0, 0.550000ns)
+|   |   |---Entity IntAdder_4_Freq500_uid112
+|   |   |      R: (c19, 0.069231ns)
+|   |   |---Entity IntMultiplier_3x4_5_Freq500_uid114
+|   |   |      R: (c19, 0.069231ns)
+|   |   |---Entity IntAdder_14_Freq500_uid118
+|   |   |      R: (c19, 1.199231ns)
+|   |---Entity Exp_8_10_Freq500_uid75
+|   |      expY: (c19, 1.199231ns)   K: (c17, 0.299231ns)
+|   |---Entity IntAdder_20_Freq500_uid121
+|   |      R: (c20, 1.139231ns)
+|---Entity FPExp_8_10_Freq500_uid71
+|      R: (c20, 1.689231ns)
+Entity top_module
+   R: (c21, 1.539231ns)
+Entity TestBench_top_module_Freq500_uid123
+
+To run the simulation using ModelSim, type the following in 'vsim -c':
+   vdel -all -lib work
+   vlib work
+   vcom fppowtf32/fppowtf32.vhdl
+   vsim TestBench_top_module_Freq500_uid123
+   add wave -r *
+   run 1000332ns
+To run the simulation using gHDL, type the following in a shell prompt:
+ghdl -a --ieee=standard --ieee=synopsys -fexplicit fppowtf32/fppowtf32.vhdl
+ghdl -e --ieee=standard --ieee=synopsys -fexplicit TestBench_top_module_Freq500_uid123
+ghdl -r --ieee=standard --ieee=synopsys -fexplicit TestBench_top_module_Freq500_uid123 --vcd=TestBench_top_module_Freq500_uid123.vcd --stop-time=1000332ns
+gtkwave TestBench_top_module_Freq500_uid123.vcd
+To run the simulation using nvc, type the following in a shell prompt:
+nvc -M 128m --stderr=error -a fppowtf32/fppowtf32.vhdl --relaxed --error-limit=0 -e TestBench_top_module_Freq500_uid123  -r --wave=TestBench_top_module_Freq500_uid123.fst --stop-time=1000332ns
+gtkwave TestBench_top_module_Freq500_uid123.fst

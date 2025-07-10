@@ -1,0 +1,34 @@
+[Running] flopoco FPAdd wE=4 wF=3 name=top_module frequency=500 TestBench n=100000 outputFile=fpadd8/fpadd8.vhdl
+[TESTBENCH] inputFile=test.input[1;37mInfo: [0m[0;34mTestBench.cpp[0m: Test bench for top_module
+[1;37mInfo: [0m[0;34mTestBench.cpp[0m: 100000 test cases have been generated
+
+*** Final report ***
+Output file: fpadd8/fpadd8.vhdl
+Pipeline constructed using approximate timings for target DummyFPGA @ 500 MHz
+|---Entity RightShifterSticky4_by_max_6_Freq500_uid4
+|      R: (c1, 1.450000ns)   Sticky: (c2, 1.330000ns)
+|---Entity IntAdder_7_Freq500_uid6
+|      R: (c3, 1.140000ns)
+|---Entity Normalizer_Z_8_8_8_Freq500_uid8
+|      Count: (c5, 1.440000ns)   R: (c6, 0.190000ns)
+|---Entity IntAdder_10_Freq500_uid11
+|      R: (c7, 1.040000ns)
+Entity top_module
+   R: (c8, 0.340000ns)
+Entity TestBench_top_module_Freq500_uid13
+
+To run the simulation using ModelSim, type the following in 'vsim -c':
+   vdel -all -lib work
+   vlib work
+   vcom fpadd8/fpadd8.vhdl
+   vsim TestBench_top_module_Freq500_uid13
+   add wave -r *
+   run 1000192ns
+To run the simulation using gHDL, type the following in a shell prompt:
+ghdl -a --ieee=standard --ieee=synopsys -fexplicit fpadd8/fpadd8.vhdl
+ghdl -e --ieee=standard --ieee=synopsys -fexplicit TestBench_top_module_Freq500_uid13
+ghdl -r --ieee=standard --ieee=synopsys -fexplicit TestBench_top_module_Freq500_uid13 --vcd=TestBench_top_module_Freq500_uid13.vcd --stop-time=1000192ns
+gtkwave TestBench_top_module_Freq500_uid13.vcd
+To run the simulation using nvc, type the following in a shell prompt:
+nvc -M 128m --stderr=error -a fpadd8/fpadd8.vhdl --relaxed --error-limit=0 -e TestBench_top_module_Freq500_uid13  -r --wave=TestBench_top_module_Freq500_uid13.fst --stop-time=1000192ns
+gtkwave TestBench_top_module_Freq500_uid13.fst

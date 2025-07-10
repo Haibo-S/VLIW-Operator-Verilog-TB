@@ -1,0 +1,42 @@
+#! /opt/oss-cad-suite/bin/vvp
+:ivl_version "13.0 (devel)" "(s20250103-31-g7e238e7ca)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/oss-cad-suite/lib/ivl/system.vpi";
+:vpi_module "/opt/oss-cad-suite/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/oss-cad-suite/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/oss-cad-suite/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/oss-cad-suite/lib/ivl/va_math.vpi";
+S_0x55556be2ee70 .scope module, "top_module" "top_module" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 32 "X";
+    .port_info 2 /INPUT 32 "Y";
+    .port_info 3 /OUTPUT 33 "R";
+L_0x55556be564f0 .functor BUFZ 33, L_0x55556be7b0c0, C4<000000000000000000000000000000000>, C4<000000000000000000000000000000000>, C4<000000000000000000000000000000000>;
+L_0x55556be7aae0 .functor BUFZ 33, L_0x55556be7ad20, C4<000000000000000000000000000000000>, C4<000000000000000000000000000000000>, C4<000000000000000000000000000000000>;
+L_0x55556be7ab50 .functor BUFZ 33, L_0x55556be7af00, C4<000000000000000000000000000000000>, C4<000000000000000000000000000000000>, C4<000000000000000000000000000000000>;
+v0x55556be2f000_0 .net "R", 32 0, L_0x55556be564f0;  1 drivers
+o0x7e235c7c7048 .functor BUFZ 32, c4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v0x55556be7a130_0 .net "X", 31 0, o0x7e235c7c7048;  0 drivers
+o0x7e235c7c7078 .functor BUFZ 32, c4<zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz>; HiZ drive
+v0x55556be7a210_0 .net "Y", 31 0, o0x7e235c7c7078;  0 drivers
+v0x55556be7a2d0_0 .net *"_ivl_11", 0 0, L_0x55556be7ae60;  1 drivers
+v0x55556be7a3b0_0 .net *"_ivl_7", 0 0, L_0x55556be7ac20;  1 drivers
+o0x7e235c7c7108 .functor BUFZ 1, c4<z>; HiZ drive
+v0x55556be7a490_0 .net "clk", 0 0, o0x7e235c7c7108;  0 drivers
+v0x55556be7a550_0 .net "n1", 32 0, L_0x55556be7ad20;  1 drivers
+v0x55556be7a630_0 .net "n2", 32 0, L_0x55556be7af00;  1 drivers
+v0x55556be7a710_0 .net "n3", 32 0, L_0x55556be7b0c0;  1 drivers
+v0x55556be7a880_0 .net "x_int", 32 0, L_0x55556be7aae0;  1 drivers
+v0x55556be7a960_0 .net "y_int", 32 0, L_0x55556be7ab50;  1 drivers
+L_0x55556be7ac20 .part o0x7e235c7c7048, 31, 1;
+L_0x55556be7ad20 .concat [ 32 1 0 0], o0x7e235c7c7048, L_0x55556be7ac20;
+L_0x55556be7ae60 .part o0x7e235c7c7078, 31, 1;
+L_0x55556be7af00 .concat [ 32 1 0 0], o0x7e235c7c7078, L_0x55556be7ae60;
+L_0x55556be7b0c0 .arith/sum 33, L_0x55556be7aae0, L_0x55556be7ab50;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "adder32_ghdl.v";

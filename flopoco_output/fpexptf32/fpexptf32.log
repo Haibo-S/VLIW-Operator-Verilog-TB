@@ -1,0 +1,73 @@
+[Running] flopoco FPExp wE=8 wF=10 name=top_module frequency=500 TestBench n=100000 outputFile=fpexptf32/fpexptf32.vhdl
+wE=8 wF=10 d=0 k=10 g=4
+[TESTBENCH] inputFile=test.input[1;37mInfo: [0m[0;34mTestBench.cpp[0m: Test bench for top_module
+[1;37mInfo: [0m[0;34mTestBench.cpp[0m: 100000 test cases have been generated
+
+*** Final report ***
+Output file: fpexptf32/fpexptf32.vhdl
+Pipeline constructed using approximate timings for target DummyFPGA @ 500 MHz
+Entity FixRealKCM_Freq500_uid8_T0_Freq500_uid11
+   Y: (c0, 0.550000ns)
+Entity FixRealKCM_Freq500_uid8_T1_Freq500_uid14
+   Y: (c0, 0.550000ns)
+Entity FixRealKCM_Freq500_uid20_T0_Freq500_uid23
+   Y: (c0, 0.550000ns)
+Entity FixRealKCM_Freq500_uid20_T1_Freq500_uid26
+   Y: (c0, 0.550000ns)
+Entity FixFunctionByTable_Freq500_uid35
+   Y: (c0, 0.550000ns)
+Entity FixFunctionByTable_Freq500_uid38
+   Y: (c0, 0.550000ns)
+|---Entity LeftShifter11_by_max_20_Freq500_uid4
+|      R: (c1, 1.005385ns)
+|   |   |---Entity FixRealKCM_Freq500_uid8_T0_Freq500_uid11
+|   |   |      Y: (c0, 0.550000ns)
+|   |   |---Entity FixRealKCM_Freq500_uid8_T1_Freq500_uid14
+|   |   |      Y: (c0, 0.550000ns)
+|   |   |---Entity IntAdder_12_Freq500_uid18
+|   |   |      R: (c2, 0.875385ns)
+|   |---Entity FixRealKCM_Freq500_uid8
+|   |      R: (c2, 0.875385ns)
+|   |   |---Entity FixRealKCM_Freq500_uid20_T0_Freq500_uid23
+|   |   |      Y: (c0, 0.550000ns)
+|   |   |---Entity FixRealKCM_Freq500_uid20_T1_Freq500_uid26
+|   |   |      Y: (c0, 0.550000ns)
+|   |   |---Entity IntAdder_22_Freq500_uid30
+|   |   |      R: (c3, 0.835385ns)
+|   |---Entity FixRealKCM_Freq500_uid20
+|   |      R: (c3, 0.835385ns)
+|   |---Entity IntAdder_14_Freq500_uid33
+|   |      R: (c4, 0.175385ns)
+|   |---Entity FixFunctionByTable_Freq500_uid35
+|   |      Y: (c0, 0.550000ns)
+|   |---Entity FixFunctionByTable_Freq500_uid38
+|   |      Y: (c0, 0.550000ns)
+|   |---Entity IntAdder_5_Freq500_uid43
+|   |      R: (c4, 1.765385ns)
+|   |---Entity IntMultiplier_4x5_6_Freq500_uid45
+|   |      R: (c4, 1.765385ns)
+|   |---Entity IntAdder_15_Freq500_uid49
+|   |      R: (c5, 1.105385ns)
+|---Entity Exp_8_10_Freq500_uid6
+|      expY: (c5, 1.105385ns)   K: (c3, 0.155385ns)
+|---Entity IntAdder_20_Freq500_uid52
+|      R: (c6, 1.055385ns)
+Entity top_module
+   R: (c6, 1.605385ns)
+Entity TestBench_top_module_Freq500_uid54
+
+To run the simulation using ModelSim, type the following in 'vsim -c':
+   vdel -all -lib work
+   vlib work
+   vcom fpexptf32/fpexptf32.vhdl
+   vsim TestBench_top_module_Freq500_uid54
+   add wave -r *
+   run 1000202ns
+To run the simulation using gHDL, type the following in a shell prompt:
+ghdl -a --ieee=standard --ieee=synopsys -fexplicit fpexptf32/fpexptf32.vhdl
+ghdl -e --ieee=standard --ieee=synopsys -fexplicit TestBench_top_module_Freq500_uid54
+ghdl -r --ieee=standard --ieee=synopsys -fexplicit TestBench_top_module_Freq500_uid54 --vcd=TestBench_top_module_Freq500_uid54.vcd --stop-time=1000202ns
+gtkwave TestBench_top_module_Freq500_uid54.vcd
+To run the simulation using nvc, type the following in a shell prompt:
+nvc -M 128m --stderr=error -a fpexptf32/fpexptf32.vhdl --relaxed --error-limit=0 -e TestBench_top_module_Freq500_uid54  -r --wave=TestBench_top_module_Freq500_uid54.fst --stop-time=1000202ns
+gtkwave TestBench_top_module_Freq500_uid54.fst

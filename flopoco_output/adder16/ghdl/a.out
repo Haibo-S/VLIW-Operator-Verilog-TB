@@ -1,0 +1,42 @@
+#! /opt/oss-cad-suite/bin/vvp
+:ivl_version "13.0 (devel)" "(s20250103-31-g7e238e7ca)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/oss-cad-suite/lib/ivl/system.vpi";
+:vpi_module "/opt/oss-cad-suite/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/oss-cad-suite/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/oss-cad-suite/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/oss-cad-suite/lib/ivl/va_math.vpi";
+S_0x55557c521de0 .scope module, "top_module" "top_module" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 16 "X";
+    .port_info 2 /INPUT 16 "Y";
+    .port_info 3 /OUTPUT 17 "R";
+L_0x55557c5494f0 .functor BUFZ 17, L_0x55557c56e060, C4<00000000000000000>, C4<00000000000000000>, C4<00000000000000000>;
+L_0x55557c56da80 .functor BUFZ 17, L_0x55557c56dcc0, C4<00000000000000000>, C4<00000000000000000>, C4<00000000000000000>;
+L_0x55557c56daf0 .functor BUFZ 17, L_0x55557c56dea0, C4<00000000000000000>, C4<00000000000000000>, C4<00000000000000000>;
+v0x55557c522000_0 .net "R", 16 0, L_0x55557c5494f0;  1 drivers
+o0x77cef6407048 .functor BUFZ 16, c4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x55557c56d0d0_0 .net "X", 15 0, o0x77cef6407048;  0 drivers
+o0x77cef6407078 .functor BUFZ 16, c4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x55557c56d1b0_0 .net "Y", 15 0, o0x77cef6407078;  0 drivers
+v0x55557c56d270_0 .net *"_ivl_11", 0 0, L_0x55557c56de00;  1 drivers
+v0x55557c56d350_0 .net *"_ivl_7", 0 0, L_0x55557c56dbc0;  1 drivers
+o0x77cef6407108 .functor BUFZ 1, c4<z>; HiZ drive
+v0x55557c56d430_0 .net "clk", 0 0, o0x77cef6407108;  0 drivers
+v0x55557c56d4f0_0 .net "n1", 16 0, L_0x55557c56dcc0;  1 drivers
+v0x55557c56d5d0_0 .net "n2", 16 0, L_0x55557c56dea0;  1 drivers
+v0x55557c56d6b0_0 .net "n3", 16 0, L_0x55557c56e060;  1 drivers
+v0x55557c56d820_0 .net "x_int", 16 0, L_0x55557c56da80;  1 drivers
+v0x55557c56d900_0 .net "y_int", 16 0, L_0x55557c56daf0;  1 drivers
+L_0x55557c56dbc0 .part o0x77cef6407048, 15, 1;
+L_0x55557c56dcc0 .concat [ 16 1 0 0], o0x77cef6407048, L_0x55557c56dbc0;
+L_0x55557c56de00 .part o0x77cef6407078, 15, 1;
+L_0x55557c56dea0 .concat [ 16 1 0 0], o0x77cef6407078, L_0x55557c56de00;
+L_0x55557c56e060 .arith/sum 17, L_0x55557c56da80, L_0x55557c56daf0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "adder16_ghdl.v";

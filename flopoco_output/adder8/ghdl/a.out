@@ -1,0 +1,42 @@
+#! /opt/oss-cad-suite/bin/vvp
+:ivl_version "13.0 (devel)" "(s20250103-31-g7e238e7ca)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/oss-cad-suite/lib/ivl/system.vpi";
+:vpi_module "/opt/oss-cad-suite/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/oss-cad-suite/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/oss-cad-suite/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/oss-cad-suite/lib/ivl/va_math.vpi";
+S_0x55555629ede0 .scope module, "top_module" "top_module" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "clk";
+    .port_info 1 /INPUT 8 "X";
+    .port_info 2 /INPUT 8 "Y";
+    .port_info 3 /OUTPUT 9 "R";
+L_0x5555562c64f0 .functor BUFZ 9, L_0x5555562eb070, C4<000000000>, C4<000000000>, C4<000000000>;
+L_0x5555562eaa90 .functor BUFZ 9, L_0x5555562eacd0, C4<000000000>, C4<000000000>, C4<000000000>;
+L_0x5555562eab00 .functor BUFZ 9, L_0x5555562eaeb0, C4<000000000>, C4<000000000>, C4<000000000>;
+v0x55555629f000_0 .net "R", 8 0, L_0x5555562c64f0;  1 drivers
+o0x72e02cc04048 .functor BUFZ 8, c4<zzzzzzzz>; HiZ drive
+v0x5555562ea090_0 .net "X", 7 0, o0x72e02cc04048;  0 drivers
+o0x72e02cc04078 .functor BUFZ 8, c4<zzzzzzzz>; HiZ drive
+v0x5555562ea170_0 .net "Y", 7 0, o0x72e02cc04078;  0 drivers
+v0x5555562ea230_0 .net *"_ivl_11", 0 0, L_0x5555562eae10;  1 drivers
+v0x5555562ea310_0 .net *"_ivl_7", 0 0, L_0x5555562eabd0;  1 drivers
+o0x72e02cc04108 .functor BUFZ 1, c4<z>; HiZ drive
+v0x5555562ea440_0 .net "clk", 0 0, o0x72e02cc04108;  0 drivers
+v0x5555562ea500_0 .net "n1", 8 0, L_0x5555562eacd0;  1 drivers
+v0x5555562ea5e0_0 .net "n2", 8 0, L_0x5555562eaeb0;  1 drivers
+v0x5555562ea6c0_0 .net "n3", 8 0, L_0x5555562eb070;  1 drivers
+v0x5555562ea830_0 .net "x_int", 8 0, L_0x5555562eaa90;  1 drivers
+v0x5555562ea910_0 .net "y_int", 8 0, L_0x5555562eab00;  1 drivers
+L_0x5555562eabd0 .part o0x72e02cc04048, 7, 1;
+L_0x5555562eacd0 .concat [ 8 1 0 0], o0x72e02cc04048, L_0x5555562eabd0;
+L_0x5555562eae10 .part o0x72e02cc04078, 7, 1;
+L_0x5555562eaeb0 .concat [ 8 1 0 0], o0x72e02cc04078, L_0x5555562eae10;
+L_0x5555562eb070 .arith/sum 9, L_0x5555562eaa90, L_0x5555562eab00;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "adder8_ghdl.v";

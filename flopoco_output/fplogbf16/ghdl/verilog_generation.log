@@ -1,0 +1,14 @@
+ghdl -a -fsynopsys -fexplicit fplogbf16.vhdl
+fplogbf16.vhdl:1531:10:warning: value constraints don't match target ones [-Wruntime-error]
+   S1 <= L0;
+         ^
+fplogbf16.vhdl:1687:16:warning: declaration of "r" hides signal "R" [-Whide]
+      variable r : integer;
+               ^
+fplogbf16.vhdl:1719:109:warning: declaration of "R" hides signal "R" [-Whide]
+   function testLine(testCounter:integer; expectedOutputS: string(1 to 10000); expectedOutputSize: integer; R:  std_logic_vector(8+7+2 downto 0)) return boolean is
+                                                                                                            ^
+ghdl synth --out=verilog -fsynopsys -fexplicit top_module > fplogbf16_ghdl.v
+fplogbf16.vhdl:1531:10:error: out of bound expression
+   S1 <= L0;
+         ^
